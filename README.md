@@ -17,67 +17,50 @@
 ## 准备:
 我们需要前往[CUB-200-2011](https://data.caltech.edu/records/65de6-vp158)下载数据集,解压后会产生CUB_200_2011文件夹，结构如下：
 ```plaintext
-
-- visualization_parameters.py
-- CUB_200_2011
-  - best_model
-    - model.npy
-    - trainloss.json
-    - val_accuracy.json
-    - validlosses.json
 ├───CUB_200_2011
-│   ├───.idea
-│   │   └───inspectionProfiles
 │   ├───attributes
 │   ├───images
-│   └───parts
+│   ├───parts
+│   ├───bounding_boxes.txt
+│   ├───classes.txt
+│   ├───image_class_labels.txt
+│   ├───images.txt
+│   ├───train_test_split.txt
+│   ├───README
+│   └───
+
 ```
 
-其中，模型权重和Tensorboard的日志文件在result文件夹里，我还将它们存放到了网盘，需要可以自行下载
+其中，模型权重和Tensorboard的日志文件在result文件夹里，我还将它们存放到了网盘[](https://drive.google.com/drive/folders/1hJrliYm0wZz6FnxXUPgeT6-CUJNMBktr?usp=sharing)需要可以自行下载，其中firstmodepth_3.pth为预训练模型的权重，no_pre_model1.pth为未经预训练的模型权重
 
 ## 文件存放目录结构:
 
 ```plaintext
-- data
-  - fashion
-- download_use_data.py
-- easy_train.py
-- find_best_model.py
-- function1.py
-- model1.py
-- plot_loss_accuracy.py
-- test1.py
-- visualization_parameters.py
-- result
-  - best_model
-    - model.npy
-    - trainloss.json
-    - val_accuracy.json
-    - validlosses.json
-    - learningrates.json
-  - easy_train_model
-    - model.npy
-    - trainloss.json
-    - val_accuracy.json
-    - validlosses.json
-    - learningrates.json
-  - pictures
-    - find_best_learning_rate.png
-    - find_best_regularization_parameter.png
-    - find_hidden0_accuracy.png
-    - find_hidden1_accuracy.png
-    - test_accuracy.png
-    - trainloss.png
-    - validloss.png
-    - learningrates.png
-    - orign.png
-    - layer1_biases_histogram.png
-    - layer1_weights_histogram.png
-    - layer1_weights_visualization.png
-    - layer2_biases_histogram.png
-    - layer2_weights_histogram.png
-    - layer3_biases_histogram.png
-    - layer3_weights_histogram.png
+├───CUB_200_2011
+├───dataset.py
+├───load_data.py
+├───pre_train1.py
+├───pre_train2.py
+├───pre_train3.py
+├───predict_example.py
+├───test.py
+├───train_no_pre.py
+├───train_no_pre1.py
+├───transforms1.py
+├───result
+│   ├───model
+│   │   ├───firstmodepth_3.pth
+│   │   ├───no_pre_model1.pth
+│   ├───pirtures
+│   │   ├───no_pre_model1.pth
+│   │   ├───no_pre_model1.pth
+│   │   ├───no_pre_model1.pth
+│   │   ├───no_pre_model1.pth
+│   │   ├───no_pre_model1.pth
+│   ├───best_pre_log1
+│   ├───best_no_pre_log1
+│   └───
+
 ```
 
 ## 模型训练部分：
