@@ -12,7 +12,7 @@
 
 ## 任务描述：
 
-微调在ImageNet上预训练的卷积神经网络实现鸟类识别，在[CUB-200-2011]数据集(https://data.caltech.edu/records/65de6-vp158)上进行训练以实现图像分类。
+微调在ImageNet上预训练的卷积神经网络实现鸟类识别，在[CUB-200-2011](https://data.caltech.edu/records/65de6-vp158)数据集上进行训练以实现图像分类。
 
 ## 准备:
 我们需要前往[CUB-200-2011](https://data.caltech.edu/records/65de6-vp158)下载数据集,解压后会产生CUB_200_2011文件夹，结构如下：
@@ -31,7 +31,7 @@
 
 ```
 
-其中，模型权重和Tensorboard的日志文件在result文件夹里，我还将它们存放到了网盘[](https://drive.google.com/drive/folders/1hJrliYm0wZz6FnxXUPgeT6-CUJNMBktr?usp=sharing)需要可以自行下载，其中firstmodepth_3.pth为预训练模型的权重，no_pre_model1.pth为未经预训练的模型权重
+其中，模型权重和Tensorboard的日志文件在result文件夹里，我还将它们存放到了网盘[模型权重](https://drive.google.com/drive/folders/1hJrliYm0wZz6FnxXUPgeT6-CUJNMBktr?usp=sharing)需要可以自行下载，其中firstmodepth_3.pth为预训练模型的权重，no_pre_model1.pth为未经预训练的模型权重
 
 ## 文件存放目录结构:
 
