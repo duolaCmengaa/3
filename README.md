@@ -25,14 +25,14 @@
     - trainloss.json
     - val_accuracy.json
     - validlosses.json
- 
-```
 ├───CUB_200_2011
 │   ├───.idea
 │   │   └───inspectionProfiles
 │   ├───attributes
 │   ├───images
 │   └───parts
+```
+
 其中，模型权重和Tensorboard的日志文件在result文件夹里，我还将它们存放到了网盘，需要可以自行下载
 
 ## 文件存放目录结构:
