@@ -2,7 +2,7 @@
 
 # 计算机视觉期中作业
 
-李波                周语诠
+李波                
 
 21307110183
 
@@ -30,17 +30,19 @@
 
 ```
 
-其中，模型权重和Tensorboard的日志文件在result文件夹里，我还将它们存放到了网盘[模型权重](https://drive.google.com/drive/folders/1hJrliYm0wZz6FnxXUPgeT6-CUJNMBktr?usp=sharing)需要可以自行下载，其中firstmodepth_3.pth为预训练模型的权重，no_pre_model1.pth为未经预训练的模型权重
+其中，Tensorboard的日志文件在result文件夹里，我还将模型权重和Tensorboard的日志文件存放到了网盘[模型权重](https://drive.google.com/drive/folders/1hJrliYm0wZz6FnxXUPgeT6-CUJNMBktr?usp=sharing)需要可以自行下载，其中最好的经过预训练的模型权重为firstmodepth_3_1.pth，最好的没有经过预训练的模型权重为no_pre_model1.pth，firstmodepth_1.pth为固定预训练模型的特征提取部分，只对最后一层进行训练所得到的最好的模型权重，用来进行train2.py，train3.py的训练，firstmodepth_3.pth为使用load_data.py文件里的get_data()函数的数据增强方法transforms1所得到的最好的模型权重，firstmodepth_3_1.pth使用的是transforms2
 
+将模型权重，CUB数据集，日志文件按照文件存放目录结构进行存放
 ## 文件存放目录结构:
 
 ```plaintext
 ├───CUB_200_2011
 ├───dataset.py
 ├───load_data.py
-├───pre_train1.py
-├───pre_train2.py
-├───pre_train3.py
+├───print_data.py
+├───train1.py
+├───train2.py
+├───train3.py
 ├───test.py
 ├───train_no_pre.py
 ├───train_no_pre1.py
@@ -71,22 +73,20 @@
 ```
 
 ## 模型训练部分：
-pre_train1.py，pre_train2.py，pre_train3.py为预训练模型的训练部分，其中pre_train1.py为固定预训练模型的特征提取部分，只对最后一层进行训练的部分，设置了不同的learningrates和batch_sizes组合，然后pre_train2.py是以pre_train1.py得到的模型权重来进行训练，设置了不同的learningrates和batch_sizes组合，然后pre_train3.py是以pre_train1.py得到的模型权重以pre_train2.py得到的learningrates和batch_sizes最优组合来进行训练，设置了不同的weight_decay和momentum组合，其中三个文件都可以直接进行运行。
+train1.py，train2.py，train3.py为预训练模型的训练部分，其中train1.py为固定预训练模型的特征提取部分，只对最后一层进行训练的部分，设置了不同的learningrates和batch_sizes组合，然后train2.py是以train1.py得到的模型权重来进行训练，设置了不同的learningrates和batch_sizes组合，然后train3.py是以train1.py得到的模型权重和train2.py得到的learningrates和batch_sizes最优组合来进行训练，设置了不同的weight_decay和momentum组合，其中三个文件都可以直接进行运行。
 
-## 参数查找部分：
-
-直接运行find_best_model.py文件可以在候选的一些学习率、两层隐藏层大小、正则化强度，激活函数类型等超参数中进行训练，从而找到最优的超参数。找到各自的最好的超参数后会自动以最优的参数进行训练，最后会将权重文件保存到result文件夹内的best_model文件夹内。
 
 ## 测试部分：
-直接运行test.py，要注意修改要测试的模型的权重地址
+直接运行test.py，要注意修改load_path，load_path为要测试的模型的权重地址，其中要注意的是firstmodepth_1.pth和firstmodepth_3.pth使用的是load_data.py文件里的get_data()函数的数据增强方法transforms1，firstmodepth_3_1.pth使用的是load_data.py文件里的get_data()函数的数据增强方法transforms2，运行test.py时要注意把load_data.py文件里的get_data()函数的数据增强方法改为相对应的方法(transforms1,transforms2,transforms3)
 
-## 绘制loss曲线和accuracy曲线部分：
-下载好测试部分所下载的文件，并放到正确的路径，直接运行plot_loss_accuracy.py即可，图片会自动保存到result文件夹内的pictures文件夹内。
+## Tensorboard可视化的训练过程中在训练集和验证集上的loss曲线和验证集上的accuracy变化：
+下载好best_pre_log1,best_no_pre_log1,best_pre_log1_1，best_pre_log1为firstmodepth_3.pth的日志，best_pre_log1_1为firstmodepth_3_1.pth的日志，best_no_pre_log1为no_pre_model1.pth的日志
 
-## 模型网络参数的可视化部分：
-下载好模型权重部分(model.npy),放置到正确的路径，直接运行visualization_parameters.py即可，图片会自动保存到result文件夹内的pictures文件夹内。
+打开命令行或终端，导航到日志文件所存放的目录，以best_pre_log1为例，在终端直接运行tensorboard --logdir=best_pre_log1就可以实现Tensorboard可视化的训练过程中在训练集和验证集上的loss曲线和验证集上的accuracy变化
+
 
 ## 其他的文件说明：
-function1.py包含了定义的一些模型所需要的基本函数
+mine_model文件夹存放了我自己写的两个模型，alex_mine.py为AlexNet，res_mine.py为ResNet，都可以正常导入来进行训练
 
-model1.py是模型的基本结构
+print_data.py可以打印训练集，验证集，测试集的特点
+
