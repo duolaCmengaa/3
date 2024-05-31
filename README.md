@@ -26,8 +26,7 @@
 │   ├───image_class_labels.txt
 │   ├───images.txt
 │   ├───train_test_split.txt
-│   ├───README
-│   └───
+│   └───README
 
 ```
 
@@ -42,24 +41,32 @@
 ├───pre_train1.py
 ├───pre_train2.py
 ├───pre_train3.py
-├───predict_example.py
 ├───test.py
 ├───train_no_pre.py
 ├───train_no_pre1.py
 ├───transforms1.py
+├───mine_model
+│   ├───alex_mine.py
+│   ├───res_mine.py
 ├───result
 │   ├───model
+│   │   ├───firstmodepth_1.pth
 │   │   ├───firstmodepth_3.pth
+│   │   ├───firstmodepth_3_1.pth
 │   │   ├───no_pre_model1.pth
 │   ├───pirtures
-│   │   ├───no_pre_model1.pth
-│   │   ├───no_pre_model1.pth
-│   │   ├───no_pre_model1.pth
-│   │   ├───no_pre_model1.pth
-│   │   ├───no_pre_model1.pth
+│   │   ├───no_pre_train_batch_sizes_learningrates.png
+│   │   ├───no_pre_train_batch_sizes_learningrates1.png
+│   │   ├───no_pre_train_weight_decay_momentum (1).png
+│   │   ├───no_pre_train_weight_decay_momentum.png
+│   │   ├───train1_batch_sizes_learningrates.png
+│   │   ├───train2_batch_sizes_learningrates.png
+│   │   ├───train2_batch_sizes_learningrates1.png
+│   │   ├───train2_weight_decay_momentum (1).png
+│   │   ├───train2_weight_decay_momentum.png
 │   ├───best_pre_log1
 │   ├───best_no_pre_log1
-│   └───
+│   └───best_pre_log1_1
 
 ```
 
