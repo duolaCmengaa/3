@@ -32,7 +32,7 @@
 
 其中，Tensorboard的日志文件在result文件夹里，我还将模型权重和Tensorboard的日志文件存放到了网盘[模型权重](https://drive.google.com/drive/folders/1hJrliYm0wZz6FnxXUPgeT6-CUJNMBktr?usp=sharing)需要可以自行下载，其中最好的经过预训练的模型权重为firstmodepth_3_1.pth，最好的没有经过预训练的模型权重为no_pre_model1.pth，firstmodepth_1.pth为固定预训练模型的特征提取部分，只对最后一层进行训练所得到的最好的模型权重，用来进行train2.py，train3.py的训练，firstmodepth_3.pth为使用load_data.py文件里的get_data()函数的数据增强方法transforms1所得到的最好的模型权重，firstmodepth_3_1.pth使用的是transforms2
 
-将模型权重，CUB数据集，日志文件按照文件存放目录结构进行存放
+将模型权重，CUB数据集，日志文件按照文件存放目录结构进行存放就可以进行正常的训练和测试
 ## 文件存放目录结构:
 
 ```plaintext
