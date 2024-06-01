@@ -86,7 +86,7 @@ train_no_pre.py，train_no_pre1.py为没有经过预训练的模型的训练部�
 
 
 ## 其他的文件说明：
-mine_model文件夹存放了我自己写的两个模型，alex_mine.py为AlexNet，res_mine.py为ResNet，都可以正常导入来进行训练
+mine_model文件夹存放了我自己写的两个模型，alex_mine.py为AlexNet，res_mine.py为ResNet，都可以正常导入来进行训练，需要注意多次训练需要每次训练开始进行初始化
 
 print_data.py可以打印训练集，验证集，测试集的特点
 
