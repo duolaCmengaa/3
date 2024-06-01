@@ -90,3 +90,4 @@ mine_model文件夹存放了我自己写的两个模型，alex_mine.py为AlexNet
 
 print_data.py可以打印训练集，验证集，测试集的特点
 
+transforms1.py为自己定义的一些数据增强操作
