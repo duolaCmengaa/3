@@ -73,7 +73,7 @@
 ```
 
 ## 模型训练部分：
-train1.py，train2.py，train3.py为预训练模型的训练部分，其中train1.py为固定预训练模型的特征提取部分，只对最后一层进行训练的部分，设置了不同的learningrates和batch_sizes组合，然后train2.py是以train1.py得到的模型权重来进行训练，设置了不同的learningrates和batch_sizes组合，然后train3.py是以train1.py得到的模型权重和train2.py得到的learningrates和batch_sizes最优组合来进行训练，设置了不同的weight_decay和momentum组合，其中三个文件都可以直接进行运行。
+train1.py，train2.py，train3.py为预训练模型的训练部分，其中train1.py为固定预训练模型的特征提取部分，只对最后一层进行训练的部分，设置了不同的learningrates和batch_sizes组合，然后train2.py是以train1.py得到的模型权重来进行训练，设置了不同的learningrates和batch_sizes组合，然后train3.py是以train1.py得到的模型权重和train2.py得到的learningrates和batch_sizes最优组合来进行训练，设置了不同的weight_decay和momentum组合，其中train1.py可以直接进行运行，train2.py，train3.py需要正确导入并放好train1.py的模型权重才能运行
 
 train_no_pre.py，train_no_pre1.py为没有经过预训练的模型的训练部分，其中train_no_pre.py设置了不同的learningrates和batch_sizes组合，train_no_pre1.py是以train_no_pre.py得到的learningrates和batch_sizes最优组合来进行训练，设置了不同的weight_decay和momentum组合，其中两个文件都可以直接进行运行。
 ## 测试部分：
